@@ -16,6 +16,7 @@ struct Sound {
     var missed = 0
     let difficulty: Difficulty
     let soundFile: String
+    let beatTiming: [Double] = [0.0] // FOR NOW
     
     init(difficulty: Difficulty, soundFile: String) {
         self.difficulty = difficulty

@@ -13,7 +13,27 @@ class GameController: ObservableObject {
     var soundQueue: Queue<Sound> = Queue()
     var timerLength: Double
     var secondElapsed = 0.0
+    var correct: Bool? = nil
+    @Published var userTapsArray = [0.0]
     
+    
+    //TAP TIMER
+    var tapTimer: Timer?
+    var tappedTimeOver = false
+    var runCount = 0
+    
+    //TAPPED FUNC
+    var numTaps = 0
+    
+    @objc func fireTimer() {
+        print("Timer fired!")
+        runCount += 1
+
+        if runCount == 10 {
+            timer.invalidate()
+            tappedTimeOver = false
+        }
+    }
 
     
     init(_ timerLength: Double) {
@@ -26,8 +46,7 @@ class GameController: ObservableObject {
         //_timerLength = State(initialValue: timerLength)
 
         print(soundQueue)
-        
-        runGame()
+    
     }
     
     
@@ -37,19 +56,76 @@ class GameController: ObservableObject {
         
         //RUN GAME TIMER
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.secondElapsed += 1.0
-            
+                   self.secondElapsed += 1.0
+                   
             if self.secondElapsed == self.timerLength {
-                timer.invalidate()
+                       timer.invalidate()
             }
         }
         
         while self.secondElapsed != self.timerLength {
             //SetProgressBar(audio.beatTiming)
             //RunExample(audio)
+            success = RunTap(audio!)
+            showFeedback(success)
             print(self.secondElapsed)
             
         }
         
     }
+    
+    func RunTap(_ audio: Sound) -> Bool {
+        let numBeats = audio.beatTiming.count
+        tapTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        
+        while tappedTimeOver == false || numBeats <= userTapsArray.count {
+            //wait
+        }
+        
+        let correct = checkCorrect(audio.beatTiming, userTapsArray)
+        return correct
+    }
+    
+    func checkCorrect(_ initialBeats: [Double], _ tappedBeats: [Double]) -> Bool {
+        var copy: [Double] = []
+        for beat in tappedBeats{
+            copy.append(beat - tappedBeats[0])
+        }
+
+        for index in 0...initialBeats.count {
+                if abs(initialBeats[index] - copy[index]) > 0.5 {
+                    return false
+                }
+            }
+        return true
+
+    }
+    
+    func buttonTapped() {
+        numTaps += 1
+        //accuracy only to the second...
+        userTapsArray.append(Double(runCount))
+    }
+    
+    func showFeedback(_ success: Bool) {
+        var secondsElapsed = 0.0
+        let feedbackTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                   self.secondElapsed += 1.0
+                   
+            if self.secondElapsed == 3 {
+                    timer.invalidate()
+            }
+        }
+        
+        while secondsElapsed <= 3.0 {
+                if success {
+                        correct = true
+                } else {
+                        correct = false
+                }
+        }
+        
+        correct = nil
+    }
+    
 }

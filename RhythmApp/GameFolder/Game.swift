@@ -10,7 +10,11 @@ import AVKit
 
 struct Game: View {
     @State var audioPlayer: AVAudioPlayer!
-    @StateObject var GameCont = GameController(5)
+    @State var timingOfTaps = [Double]()
+    @State var timesTapped = 0
+    @State var startTimer = true //function or variable? - start when the first tap occurs
+
+    @StateObject var GameCont = GameController(5.0)
     
     var body: some View {
         ZStack {
@@ -23,27 +27,31 @@ struct Game: View {
                     
                     ZStack {
                         Rectangle()
-                           // .frame(width: UIScreen.screenWidth - 200, height: 100)
+                            .frame(width: UIScreen.screenWidth - 200, height: 100)
                             .cornerRadius(50)
                             .foregroundColor(Color("BrandDarkRed"))
                         
                         Rectangle()
-                           // .frame(width: UIScreen.screenWidth - 220, height: 80)
+                            .frame(width: UIScreen.screenWidth - 220, height: 80)
                             .cornerRadius(50)
                             .foregroundColor(Color("BrandYellow"))
                             .shadow(radius: 5)
                     }
                     
                     //make button
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 80, height: 80)
-                            .cornerRadius(30)
-                            .foregroundColor(Color("BrandNeonOrange"))
-//                            .shadow(radius: 5, x: 5, y: 5)
-//
-//                        Image(systemName: "pause.fill").font(.system(size: 40))
-//                            .foregroundColor(Color.white)
+                    Button {
+                        GameCont.runGame()
+                    } label: {
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 80, height: 80)
+                                .cornerRadius(30)
+                                .foregroundColor(Color("BrandNeonOrange"))
+    //                            .shadow(radius: 5, x: 5, y: 5)
+
+                            Image(systemName: "pause.fill").font(.system(size: 40))
+                                .foregroundColor(Color.white)
+                        }
                     }
                     
                 }.padding()
@@ -54,13 +62,26 @@ struct Game: View {
                 
                 //width, height hardcoded. try different sizes. maybe a drum without drumsticks.
                 Button {
-                    
+                    GameCont.buttonTapped() //get from timer
+//                    timesTapped += 1
+//                    drumVibrate() //animation
+//                    }
+
                 } label: {
                     Image("Drum").resizable().frame(width: 450, height: 500)
                 }
                 
                 Spacer()
                 Spacer()
+                
+                //fix spacing
+                if GameCont.correct == true {
+                    //Show check or something
+                }
+                    
+                if GameCont.correct == false {
+                    //Show “x” or something
+                }
 
                 
             }
