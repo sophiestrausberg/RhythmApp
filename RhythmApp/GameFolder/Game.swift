@@ -13,9 +13,14 @@ struct Game: View {
     @State var timingOfTaps = [Double]()
     @State var timesTapped = 0
     @State var startTimer = true //function or variable? - start when the first tap occurs
+    @State var timeRemaining: Int
 
     @StateObject var GameCont = GameController(5.0)
     
+    init (timeRemaining: Int) {
+        self.timeRemaining = timeRemaining
+    }
+
     var body: some View {
         ZStack {
             Circle().frame(width: 10000).edgesIgnoringSafeArea(.all).foregroundColor(Color("BrandRed"))
@@ -87,12 +92,13 @@ struct Game: View {
             }
 
         }.background(Color("BrandLightRed"))
+            .navigationBarBackButtonHidden(true)
     }
 }
 
 struct Game_Previews: PreviewProvider {
     static var previews: some View {
-        Game()
+        Game(timeRemaining: 10)
     }
 }
 
