@@ -15,7 +15,8 @@ class GameController: ObservableObject {
     var secondElapsed = 0.0
     var correct: Bool? = nil
     @Published var userTapsArray = [0.0]
-    
+
+    var lastDateObserved = Date()
     
     //TAP TIMER
     var tapTimer: Timer?
@@ -55,22 +56,45 @@ class GameController: ObservableObject {
         var audio = soundQueue.dequeue()
         
         //RUN GAME TIMER
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                   self.secondElapsed += 1.0
-                   
-            if self.secondElapsed == self.timerLength {
-                       timer.invalidate()
-            }
-        }
+
         
-        while self.secondElapsed != self.timerLength {
+        DispatchQueue.global(qos: .background).async {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                print(self.secondElapsed)
+                    self.secondElapsed += 1.0
+                    
+                    if self.secondElapsed == self.timerLength {
+                        self.timer.invalidate()
+                    }
+                }
+                RunLoop.current.run()
+            }
+        
+//        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+//            self.secondElapsed += 1.0
+//
+//            if self.secondElapsed == self.timerLength {
+//                timer.invalidate()
+//            }
+//        }
+      //  print(self.secondElapsed)
+
+        while self.secondElapsed < self.timerLength {
             //SetProgressBar(audio.beatTiming)
             //RunExample(audio)
-            success = RunTap(audio!)
-            showFeedback(success)
-            print(self.secondElapsed)
+            //success = RunTap(audio!)
+           // showFeedback(success)
+//            print(self.secondElapsed)
+            print("Hello")
+            
+//            let currentDate = Date()
+//            let currentAccumulatedTime = currentDate.timeIntervalSince(lastDateObserved)
+//            self.secondElapsed +=  currentAccumulatedTime
+//            lastDateObserved = currentDate
             
         }
+        
+        print(self.secondElapsed)
         
     }
     

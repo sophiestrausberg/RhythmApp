@@ -22,6 +22,7 @@
 		E4E7E27629BEADFE0062E93B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E7E27529BEADFE0062E93B /* Queue.swift */; };
 		E4E7E27829BEAE120062E93B /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E7E27729BEAE120062E93B /* Homepage.swift */; };
 		E4E7E27A29BEAE380062E93B /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E7E27929BEAE380062E93B /* CustomTabBar.swift */; };
+		FA68E24B29CA6D6300A267D0 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68E24A29CA6D6300A267D0 /* StopWatchManager.swift */; };
 		FAA6CCB929C9622F006FE7CC /* SetTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CCB829C9622F006FE7CC /* SetTimer.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		E4E7E27529BEADFE0062E93B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		E4E7E27729BEAE120062E93B /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		E4E7E27929BEAE380062E93B /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		FA68E24A29CA6D6300A267D0 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
 		FAA6CCB829C9622F006FE7CC /* SetTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 			children = (
 				E4E7E26D29BEACE70062E93B /* Game.swift */,
 				E4E7E26F29BEAD0A0062E93B /* GameController.swift */,
+				FA68E24A29CA6D6300A267D0 /* StopWatchManager.swift */,
 				E4E7E27129BEAD290062E93B /* Sound.swift */,
 				E4E7E27329BEAD3E0062E93B /* SoundData.swift */,
 				E4E7E27529BEADFE0062E93B /* Queue.swift */,
@@ -215,6 +218,7 @@
 				E4BE565729BEA9D8009B341D /* Login.swift in Sources */,
 				E4E7E26E29BEACE70062E93B /* Game.swift in Sources */,
 				E4E7E26829BEAC190062E93B /* Homescreen.swift in Sources */,
+				FA68E24B29CA6D6300A267D0 /* StopWatchManager.swift in Sources */,
 				E4E7E26C29BEAC860062E93B /* Feedback.swift in Sources */,
 				E4E7E27A29BEAE380062E93B /* CustomTabBar.swift in Sources */,
 				E4E7E26A29BEAC730062E93B /* Menu.swift in Sources */,
