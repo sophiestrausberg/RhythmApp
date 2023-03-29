@@ -27,7 +27,7 @@ struct SUWelcome: View {
                     Text("Welcome, \(NewUser.fName!)!")
                         .bold()
                         .font(.title)
-                    Text("CommunAphasia is so happy to have you.")
+                    Text("Music App is so happy to have you.")
                         .font(.footnote)
                         .foregroundColor(.gray)
                 }.padding(.bottom, screenHeight/20)
