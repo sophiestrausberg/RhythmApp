@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarContainer: View {
-    @State var selectedTab = "line.horizontal.3"
+    @State var selectedTab = ""
     
     var body: some View {
         VStack {
@@ -17,8 +17,8 @@ struct TabBarContainer: View {
             } else if selectedTab == "app.badge" {
                 ChoseAvatar() //change to home icon?
             } else {
-                Homescreen()
-                //HomePage()
+                //Homescreen()
+                HomePage()
             }
             
             CustomTabBar(selectedTab: $selectedTab)

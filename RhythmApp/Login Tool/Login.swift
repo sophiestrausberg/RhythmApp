@@ -22,6 +22,7 @@ struct Login: View {
     @State var email = ""
     @State var password = ""
     @State var signUpPressed = false
+    @State var signInPressed = false
     
     var body: some View {
         NavigationStack{
@@ -86,7 +87,7 @@ struct Login: View {
                         .padding(.horizontal, 40)
                         .padding(.bottom, screenHeight/20)
                     
-                    NavigationLink(destination: HomePage().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $signUpPressed) {
+                    NavigationLink(destination: HomePage().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $signInPressed) {
                         Text("Sign In")
                             .font(.custom("Quicksand-SemiBold", size: 20))
                             .foregroundColor(.white)
@@ -97,7 +98,7 @@ struct Login: View {
                             .shadow(radius: 5)
                             .onTapGesture {
                                 login()
-                                signUpPressed.toggle()
+                                signInPressed.toggle()
                             }
                     }
                     
@@ -106,7 +107,7 @@ struct Login: View {
                         Text("Don't have an account?")
                             .font(.custom("Quicksand-Regular", size: 18))
                             .foregroundColor(.gray)
-                        NavigationLink(destination: HomePage().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $signUpPressed) {
+                        NavigationLink(destination: SUName().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $signUpPressed) {
                             Button {
                                 signUpPressed.toggle()
                             } label: {
