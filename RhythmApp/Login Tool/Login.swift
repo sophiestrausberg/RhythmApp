@@ -87,7 +87,7 @@ struct Login: View {
                         .padding(.horizontal, 40)
                         .padding(.bottom, screenHeight/20)
                     
-                    NavigationLink(destination: HomePage().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $signInPressed) {
+                    NavigationLink(destination: TabBarContainer().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $signInPressed) {
                         Text("Sign In")
                             .font(.custom("Quicksand-SemiBold", size: 20))
                             .foregroundColor(.white)

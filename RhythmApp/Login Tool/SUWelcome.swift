@@ -32,7 +32,7 @@ struct SUWelcome: View {
                         .foregroundColor(.gray)
                 }.padding(.bottom, screenHeight/20)
                 
-                NavigationLink(destination: HomePage().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $continuePressed) {
+                NavigationLink(destination: TabBarContainer().environmentObject(AuthViewModel()).navigationBarBackButtonHidden(true), isActive: $continuePressed) {
                     Text("LET'S GO")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
