@@ -33,11 +33,11 @@ struct CustomTabBar: View {
                 Circle()
                     .frame(width: 100)
                     .foregroundColor(Color("BrandPink"))
-//                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
-//                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
-//
+
                 Button {
-                    
+                    withAnimation(.spring()) {
+                        selectedTab = "play.fill"
+                    }
                 } label: {
                     Image(systemName: "play.fill")
                         .font(.largeTitle)
@@ -58,7 +58,7 @@ struct CustomTabBar: View {
         }
         .padding(.top)
         .padding(.vertical, 10)
-     //   .padding(.bottom, getSafeArea().bottom == 0 ? 30 : getSafeArea().bottom)
+        .padding(.bottom, getSafeArea().bottom == 0 ? 30 : getSafeArea().bottom)
 //        .background(Color("BrandBlue"))
 //        .cornerRadius(25)
 //        .background(Image("Wave"))

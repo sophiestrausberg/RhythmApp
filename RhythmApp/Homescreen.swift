@@ -33,13 +33,13 @@ struct Homescreen: View {
                         .padding(.top, 300)
                         .transition(.opacity)
                     
-                    Image("Dinosaur") // 1
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 700, height: 550)
-                        .ignoresSafeArea()
-                        .padding(.top, 300)
-                        .transition(.opacity)
+//                    Image("Dinosaur") // 1
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 700, height: 550)
+//                        .ignoresSafeArea()
+//                        .padding(.top, 300)
+//                        .transition(.opacity)
                     VStack {
                         Image("CloudsOne")
                             .resizable()
@@ -60,17 +60,17 @@ struct Homescreen: View {
                 }
                 
                 VStack {
-                    
-                    NavigationLink(destination: SetTimer(), label: {Text("Start")})
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .cornerRadius(5)
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.gray, lineWidth: 2))
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 52/255, green: 131/255, blue: 235/255))
-                        .padding(.top, 850)
+                   
+//                    NavigationLink(destination: SetTimer(), label: {Text("Start")})
+//                        .font(.system(size: 18, weight: .bold, design: .rounded))
+//                        .padding()
+//                        .frame(width: 300, height: 50)
+//                        .cornerRadius(5)
+//                        .overlay(RoundedRectangle(cornerRadius: 5)
+//                            .stroke(Color.gray, lineWidth: 2))
+//                        .foregroundColor(Color.white)
+//                        .background(Color(red: 52/255, green: 131/255, blue: 235/255))
+//                        .padding(.top, 850)
                     
                 }
                 

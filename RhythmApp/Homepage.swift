@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomePage: View {
-    @State var selectedTab = "line.horizontal.3"
+    @EnvironmentObject private var authModel: AuthViewModel
+//    @State var selectedTab = "line.horizontal.3"
     
     var body: some View {
         VStack() {
@@ -27,9 +28,10 @@ struct HomePage: View {
             
             Spacer()
             
-            
-            CustomTabBar(selectedTab: $selectedTab)
+//            CustomTabBar(selectedTab: $selectedTab)
+                
         }
+        .padding(.bottom, 100)
         .ignoresSafeArea()
     }//ADD BACKGROUND COLOR?
     
