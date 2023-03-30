@@ -15,6 +15,7 @@ class GameController: ObservableObject {
     var secondElapsed = 0.0
     var correct: Bool? = nil
     @Published var userTapsArray = [0.0]
+    var curSound: Sound? = nil
 
     var lastDateObserved = Date()
     
@@ -54,6 +55,7 @@ class GameController: ObservableObject {
     func runGame() {
         var success = false
         var audio = soundQueue.dequeue()
+        curSound = audio
         
         //RUN GAME TIMER
 

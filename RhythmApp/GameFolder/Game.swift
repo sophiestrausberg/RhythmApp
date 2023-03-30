@@ -30,17 +30,27 @@ struct Game: View {
             VStack {
                 HStack(spacing: 40) {
                     
-                    ZStack {
+                    ZStack(alignment: .leading) {
                         Rectangle()
                             .frame(width: UIScreen.screenWidth - 200, height: 100)
                             .cornerRadius(50)
                             .foregroundColor(Color("BrandDarkRed"))
                         
                         Rectangle()
-                            .frame(width: UIScreen.screenWidth - 220, height: 80)
+                            .frame(width: ((CGFloat(GameCont.timerLength) - CGFloat(timeRemaining)) / CGFloat(GameCont.timerLength)) * (UIScreen.screenWidth - 220), height: 80)
+                        //what does value do???
+                            .animation(.easeInOut(duration: 0.2), value: 0.2)
                             .cornerRadius(50)
+                            .padding(.leading, 8)
                             .foregroundColor(Color("BrandYellow"))
                             .shadow(radius: 5)
+                        
+                        ForEach(GameCont.curSound?.beatTiming ?? [0.0], id: \.self) { beat in
+                            Image(systemName: "music.note")
+                                .font(.custom("Quicksand-SemiBold", size: 50))
+                                .offset(x: (CGFloat(beat) / CGFloat(GameCont.timerLength)) * (UIScreen.screenWidth - 220))
+                        }
+                        
                     }
                     
                     //make button
