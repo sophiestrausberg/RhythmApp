@@ -8,6 +8,9 @@
 import SwiftUI
 import AVKit
 
+
+var drumImage = "Drum"
+
 struct Game: View {
     @State var audioPlayer: AVAudioPlayer!
     @State var timingOfTaps = [Double]()
@@ -83,7 +86,7 @@ struct Game: View {
 //                    }
 
                 } label: {
-                    Image("Drum").resizable().frame(width: 450, height: 500)
+                    Image(drumImage).resizable().frame(width: 450, height: 500)
                 }
                 
                 Spacer()

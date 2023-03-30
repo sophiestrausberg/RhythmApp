@@ -10,6 +10,7 @@ import SwiftUI
 
 class GameController: ObservableObject {
     var timer = Timer()
+    var timerExample = Timer()
     var soundQueue: Queue<Sound> = Queue()
     var timerLength: Double
     var secondElapsed = 0.0
@@ -51,6 +52,8 @@ class GameController: ObservableObject {
     
     }
     
+    
+
     
     func runGame() {
         var success = false
@@ -100,15 +103,45 @@ class GameController: ObservableObject {
         
     }
     
+    func runExample(_ difficulty: Difficulty, _ audio: String) {
+        // turn the timer into a function?
+        var secondElapsedThis = 0.0
+        DispatchQueue.global(qos: .background).async {
+            self.timerExample = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+             
+                    secondElapsedThis += 0.01
+                    
+                if secondElapsedThis == 6.0 { //LETS MAKE EACH AUDIO LENGTH THE SAME
+                        self.timerExample.invalidate()
+                    }
+                }
+                RunLoop.current.run()
+            }
+        
+        
+        playSound(sound: audio, type: "mp3")
+        //Can we make beatTiming into Int array? Should we have some sort of waiting period? Can we fill audiobeatTiming and add all of our audio?
+        
+        while secondElapsedThis < 6.0 {
+            if Sound(difficulty: difficulty, soundFile: audio).beatTiming.contains(secondElapsedThis) {
+                drumImage = "secondDrum"
+            }
+            if !Sound(difficulty: difficulty, soundFile: audio).beatTiming.contains(secondElapsedThis) { //convert to Int
+                drumImage = "Drum"
+            }
+        }
+        //background change or vibration
+    }
+    
     func RunTap(_ audio: Sound) -> Bool {
         let numBeats = audio.beatTiming.count
         tapTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
-        while tappedTimeOver == false || numBeats <= userTapsArray.count {
+        while tappedTimeOver == false || numBeats > userTapsArray.count {
             //wait
         }
         
-        let correct = checkCorrect(audio.beatTiming, userTapsArray)
+      let correct = checkCorrect(audio.beatTiming, userTapsArray)
         return correct
     }
     
@@ -130,7 +163,7 @@ class GameController: ObservableObject {
     func buttonTapped() {
         numTaps += 1
         //accuracy only to the second...
-        userTapsArray.append(Double(runCount))
+        userTapsArray.append(Double(self.secondElapsed))
     }
     
     func showFeedback(_ success: Bool) {
