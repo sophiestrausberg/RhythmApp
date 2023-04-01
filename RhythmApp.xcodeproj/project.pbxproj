@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4104EDA29D7D378007A8BE0 /* Easy1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104ED929D7D378007A8BE0 /* Easy1.mp3 */; };
+		E4104EDC29D7D3DD007A8BE0 /* Easy2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EDB29D7D3DD007A8BE0 /* Easy2.mp3 */; };
+		E4104EDE29D7D43C007A8BE0 /* Easy3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EDD29D7D43B007A8BE0 /* Easy3.mp3 */; };
+		E4104EE029D7D6ED007A8BE0 /* Medium1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EDF29D7D6ED007A8BE0 /* Medium1.mp3 */; };
+		E4104EE229D7D818007A8BE0 /* Medium2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EE129D7D818007A8BE0 /* Medium2.mp3 */; };
+		E4104EE429D7D8E4007A8BE0 /* Medium3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EE329D7D8E4007A8BE0 /* Medium3.mp3 */; };
+		E4104EE629D7D993007A8BE0 /* Hard1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EE529D7D993007A8BE0 /* Hard1.mp3 */; };
+		E4104EE829D7DA5A007A8BE0 /* Hard2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EE729D7DA5A007A8BE0 /* Hard2.mp3 */; };
+		E4104EEA29D7DBAD007A8BE0 /* Hard3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E4104EE929D7DBAD007A8BE0 /* Hard3.mp3 */; };
 		E415FDF429D25A1500E84793 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E415FDF329D25A1500E84793 /* NewUser.swift */; };
 		E4198FB429D398EF0046845A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4198FB329D398EF0046845A /* AuthViewModel.swift */; };
 		E4198FB629D399520046845A /* SUName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4198FB529D399520046845A /* SUName.swift */; };
@@ -44,6 +53,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4104ED929D7D378007A8BE0 /* Easy1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Easy1.mp3; sourceTree = "<group>"; };
+		E4104EDB29D7D3DD007A8BE0 /* Easy2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Easy2.mp3; sourceTree = "<group>"; };
+		E4104EDD29D7D43B007A8BE0 /* Easy3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Easy3.mp3; sourceTree = "<group>"; };
+		E4104EDF29D7D6ED007A8BE0 /* Medium1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Medium1.mp3; sourceTree = "<group>"; };
+		E4104EE129D7D818007A8BE0 /* Medium2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Medium2.mp3; sourceTree = "<group>"; };
+		E4104EE329D7D8E4007A8BE0 /* Medium3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Medium3.mp3; sourceTree = "<group>"; };
+		E4104EE529D7D993007A8BE0 /* Hard1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hard1.mp3; sourceTree = "<group>"; };
+		E4104EE729D7DA5A007A8BE0 /* Hard2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hard2.mp3; sourceTree = "<group>"; };
+		E4104EE929D7DBAD007A8BE0 /* Hard3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hard3.mp3; sourceTree = "<group>"; };
 		E415FDF329D25A1500E84793 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		E4198FB329D398EF0046845A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		E4198FB529D399520046845A /* SUName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUName.swift; sourceTree = "<group>"; };
@@ -114,6 +132,15 @@
 			isa = PBXGroup;
 			children = (
 				FA059F3629D5C978005AA649 /* noise.mp3 */,
+				E4104ED929D7D378007A8BE0 /* Easy1.mp3 */,
+				E4104EDB29D7D3DD007A8BE0 /* Easy2.mp3 */,
+				E4104EDD29D7D43B007A8BE0 /* Easy3.mp3 */,
+				E4104EDF29D7D6ED007A8BE0 /* Medium1.mp3 */,
+				E4104EE129D7D818007A8BE0 /* Medium2.mp3 */,
+				E4104EE329D7D8E4007A8BE0 /* Medium3.mp3 */,
+				E4104EE529D7D993007A8BE0 /* Hard1.mp3 */,
+				E4104EE729D7DA5A007A8BE0 /* Hard2.mp3 */,
+				E4104EE929D7DBAD007A8BE0 /* Hard3.mp3 */,
 				E4BE565529BEA971009B341D /* Info.plist */,
 				E4198FB929D39BA40046845A /* GoogleService-Info.plist */,
 				E4BE564F29BEA8F8009B341D /* Font */,
@@ -257,11 +284,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4104EEA29D7DBAD007A8BE0 /* Hard3.mp3 in Resources */,
+				E4104EE829D7DA5A007A8BE0 /* Hard2.mp3 in Resources */,
+				E4104EE629D7D993007A8BE0 /* Hard1.mp3 in Resources */,
 				E4198FBA29D39BA50046845A /* GoogleService-Info.plist in Resources */,
+				E4104EE429D7D8E4007A8BE0 /* Medium3.mp3 in Resources */,
+				E4104EE029D7D6ED007A8BE0 /* Medium1.mp3 in Resources */,
 				E4BE565329BEA930009B341D /* Easy1.mp3 in Resources */,
 				E42567E929CBA14700BB1871 /* Quicksand-VariableFont_wght.ttf in Resources */,
+				E4104EDE29D7D43C007A8BE0 /* Easy3.mp3 in Resources */,
+				E4104EDC29D7D3DD007A8BE0 /* Easy2.mp3 in Resources */,
+				E4104EDA29D7D378007A8BE0 /* Easy1.mp3 in Resources */,
 				FA059F3729D5C978005AA649 /* noise.mp3 in Resources */,
 				E4BE564829BEA886009B341D /* Preview Assets.xcassets in Resources */,
+				E4104EE229D7D818007A8BE0 /* Medium2.mp3 in Resources */,
 				E4BE564429BEA886009B341D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
